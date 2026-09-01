@@ -1,5 +1,10 @@
 # eufy-security-ws
 
+> [!IMPORTANT]
+> This fork branch is a temporary Home Assistant compatibility build. It pins the
+> reviewed `eufy-security-client` Mega/v6 fixes by commit for reproducible builds.
+> It remains dependent on legacy inventory APIs and is not affiliated with Eufy.
+
 > [!CAUTION]
 > # 🚨🚨🚨 LIBRARY DEPRECATION NOTICE 🚨🚨🚨
 >
