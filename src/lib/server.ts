@@ -132,17 +132,33 @@ export class Client {
   }
 
   async receiveMessage(data: RawData): Promise<void> {
-    let msg: IncomingMessage;
-    let dataString: string;
+    const dataString = this.rawDataToString(data);
+    let parsed: unknown;
     try {
-      dataString = this.rawDataToString(data);
-      msg = JSON.parse(dataString);
-    } catch (err) {
-      // We don't have the message ID. Just close it.
-      this.logger.debug(
-        `Unable to parse data: ${Buffer.isBuffer(data) ? data.toString("utf-8").substring(0, 100) : String(data).substring(0, 100)}`,
-      );
-      this.socket.close();
+      parsed = JSON.parse(dataString);
+    } catch {
+      this.logger.debug("Unable to parse WebSocket message", {
+        payloadLength: dataString.length,
+      });
+      this.socket.close(1002, "Invalid JSON");
+      return;
+    }
+
+    if (
+      parsed === null ||
+      typeof parsed !== "object" ||
+      Array.isArray(parsed) ||
+      typeof (parsed as { messageId?: unknown }).messageId !== "string"
+    ) {
+      this.logger.debug("Invalid WebSocket message envelope");
+      this.socket.close(1002, "Invalid message");
+      return;
+    }
+
+    const msg = parsed as IncomingMessage;
+    if (typeof msg.command !== "string" || msg.command.length === 0) {
+      this.logger.debug("WebSocket message is missing a command");
+      this.sendResultError(msg.messageId, ErrorCode.unknownCommand);
       return;
     }
 
