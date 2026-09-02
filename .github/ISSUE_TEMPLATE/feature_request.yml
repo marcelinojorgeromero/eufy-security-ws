@@ -3,6 +3,11 @@ description: Suggest an idea for this project
 title: "[Feature request]: "
 labels: ["enhancement"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Keep requests narrow and backward compatible. Device-specific changes
+        require matching hardware or sanitized reproducible fixtures.
   - type: textarea
     id: feature-request
     attributes:

@@ -3,6 +3,11 @@ description: Here you can ask questions
 title: "[Question]: "
 labels: ["question"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Questions about this compatibility build are welcome. Never include
+        credentials, tokens, serial numbers, or private addresses.
   - type: textarea
     id: question
     attributes:
