@@ -6,6 +6,12 @@ body:
   - type: markdown
     attributes:
       value: |
+        This repository maintains a temporary compatibility bridge, not the
+        native Mega successor. Remove credentials, tokens, serial numbers,
+        private addresses, and account payloads before attaching logs.
+  - type: markdown
+    attributes:
+      value: |
         Thanks for taking the time to fill out this bug report!
   - type: input
     id: version

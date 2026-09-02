@@ -4,6 +4,10 @@
 > This fork branch is a temporary Home Assistant compatibility build. It pins the
 > reviewed `eufy-security-client` Mega/v6 fixes by commit for reproducible builds.
 > It remains dependent on legacy inventory APIs and is not affiliated with Eufy.
+>
+> Compatibility releases and support are published from this fork. Report
+> regressions in the [fork issue tracker](https://github.com/marcelinojorgeromero/eufy-security-ws/issues)
+> after removing credentials, tokens, serial numbers, and private addresses.
 
 > [!CAUTION]
 > # 🚨🚨🚨 LIBRARY DEPRECATION NOTICE 🚨🚨🚨
@@ -44,7 +48,7 @@
 [![Downloads](https://img.shields.io/npm/dm/eufy-security-ws.svg)](https://www.npmjs.com/package/eufy-security-ws)
 [![Total Downloads](https://img.shields.io/npm/dt/eufy-security-ws.svg)](https://www.npmjs.com/package/eufy-security-ws)
 [![Dependency Status](https://img.shields.io/librariesio/release/npm/eufy-security-ws)](https://libraries.io/npm/eufy-security-ws)
-[![Known Vulnerabilities](https://snyk.io/test/github/bropat/eufy-security-ws/badge.svg)](https://snyk.io/test/github/bropat/eufy-security-ws)
+[![Known Vulnerabilities](https://snyk.io/test/github/marcelinojorgeromero/eufy-security-ws/badge.svg)](https://snyk.io/test/github/marcelinojorgeromero/eufy-security-ws)
 
 [![NPM](https://nodei.co/npm/eufy-security-ws.png?downloads=true)](https://nodei.co/npm/eufy-security-ws/)
 
@@ -69,7 +73,7 @@ If you appreciate my work and progress and want to support me, you can do it her
 
 ## Get started
 
-To try it out or for more information, such as API documentation, Docker image, etc., please see [here](https://bropat.github.io/eufy-security-ws/).
+The upstream API documentation remains available [here](https://bropat.github.io/eufy-security-ws/). The supported Home Assistant image is published by the [compatibility add-on repository](https://github.com/marcelinojorgeromero/hassio-eufy-security-ws).
 
 ## Deployment
 
